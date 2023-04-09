@@ -1,0 +1,56 @@
+<div class="employee-list">
+
+  <div class="container">
+    <h3>Add Employee</h3>
+    <div *ngIf="error" class="alert alert-danger">
+      <p>Error: {{ error }}</p>
+    </div>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()" class="employee-form">
+      <input type="text" name="firstName" placeholder="First Name" formControlName="firstName" class="form-control"/>
+      <br/>
+      <input type="text" name="lastName" placeholder="Last Name" formControlName="lastName" class="form-control"/>
+      <br/>
+      <input type="email" name="email" placeholder="Email" formControlName="email" class="form-control"/>
+      <br/>
+      <button [disabled]="employeeForm.invalid" type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <br/> <br/> <br/>
+  </div>
+
+  <div *ngIf="employees" class="container">
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th colspan="4" style="text-align: center" class="h3">Employee List</th>
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mail</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+
+
+      <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.firstName }} </td>
+        <td>{{ employee.lastName }} </td>
+        <td>{{ employee.email }} </td>
+        <td>
+          <a [routerLink]="['/employee', employee.id]" class="btn btn-primary" style="margin-right: 12px">Detail</a>
+          <a [routerLink]="['/employee/update', employee.id]" class="btn btn-success"
+             style="margin-right: 12px">Update</a>
+          <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+</div>
+

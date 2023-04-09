@@ -1,0 +1,15 @@
+button {
+  background-color: red;
+  color: white;
+  border-style: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+
+.route-link:hover {
+  background: #125699;
+  color: #888888;
+}
