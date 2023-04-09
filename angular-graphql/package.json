@@ -1,12 +1,13 @@
 {
   "name": "angular-graphql",
   "version": "0.0.0",
-  "engine": {
-    "node": "16.x"
+  "engines": {
+    "node": "14.21.3",
+    "npm": "6.14.6"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
