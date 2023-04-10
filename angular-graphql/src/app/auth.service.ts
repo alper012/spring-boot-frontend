@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
 
-  private baseURL = 'http://localhost:8080';
+  private baseURL = 'https://graphql-backend1.herokuapp.com';
   private tokenEndpoint = '/oauth/token';
 
   constructor(private http: HttpClient, private router: Router) {
