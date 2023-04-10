@@ -4,7 +4,7 @@ import {ApolloLink, InMemoryCache} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
 import {setContext} from "@apollo/client/link/context";
 
-const uri = 'http://localhost:8080/apis/graphql'; // <-- add the URL of the GraphQL server here
+const uri = 'https://graphql-backend1.herokuapp.com/apis/graphql'; // <-- add the URL of the GraphQL server here
 
 export function createApollo(httpLink: HttpLink) {
   const basic = setContext((operation, context) => ({
