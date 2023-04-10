@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(email: string, password: string): void {
-    this.http.post<any>('http://localhost:8080/register', {email, password})
+    this.http.post<any>('https://graphql-backend1.herokuapp.com/register', {email, password})
       .subscribe(
         response => {
           console.log(response);
